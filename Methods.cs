@@ -8,6 +8,7 @@ namespace poePart1
 {
     internal class Methods
     {
+        int scaleFactor, originalScaleFactor = 1;
         public void addIngrediants(List<string> allIngrediants)
         {
             string ingrediantName, unitOfMeasure = "", temp; 
@@ -24,57 +25,19 @@ namespace poePart1
                 Console.WriteLine("How much of the ingrediant is needed? ");
                 quantity = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("What is the unit of measurement?\n1: Tablespoon/s\n2: Teaspoon/s\n3: Cup/s");
-                choice = Convert.ToInt32(Console.ReadLine());
-                choice --;
-
-                switch (choice)
-                {
-                    case 0:
-                        if(quantity > 1)
-                        {
-                            unitOfMeasure = "Tablespoons";
-                        }
-                        else
-                        {
-                            unitOfMeasure = "Tablespoon";
-                        }
-                        break;
-
-                    case 1:
-                        if (quantity > 1)
-                        {
-                            unitOfMeasure = "Teaspoons";
-                        }
-                        else
-                        {
-                            unitOfMeasure = "Teaspoon";
-                        }
-                        break;
-
-                    case 2: 
-                        if (quantity > 1) 
-                        {
-                            unitOfMeasure = "Cups";
-                        }
-                        else
-                        {
-                            unitOfMeasure = "Cup";
-                        }
-                        break;
-
-                    default:
-                        Console.WriteLine("Invalid option");
-                        break;
-                }
+                Console.WriteLine("What is the unit of measurement?");
+                unitOfMeasure = Console.ReadLine();
+                
                 temp = ingrediantName + ": " + quantity + " " + unitOfMeasure;
 
                 allIngrediants[i] = temp;
+
             }
         }
-        public void clearRecipe()
+        public void clearRecipe(List<string> allIngrediants, List<string>allSteps)
         {
-
+            allIngrediants.Clear();
+            allSteps.Clear();
         }
         public void addSteps(List<string> allSteps)
         {
@@ -106,13 +69,18 @@ namespace poePart1
                 Console.WriteLine("Step " + (i+1) + ": " + allSteps[i]);
             }
         }
-        public void scaleRecipe(int scaleFactor) 
+        public void scaleRecipe(List<string> allIngrediants) 
         {
+            Console.WriteLine("What factor would you like to scale the recipe by? E.g 3");
+            scaleFactor = Convert.ToInt32(Console.ReadLine());
+
+            string temp = allIngrediants.Find("1-10000");
+
 
         }
-        public void resetScale(int scaleFactor)
+        public void resetScale()
         {
-
+            scaleFactor = originalScaleFactor;
         }
 
     }

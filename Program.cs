@@ -1,6 +1,6 @@
 ﻿namespace poePart1
 {
-    internal class Program
+    internal class Recipe
     {
         static void Main(string[] args)
         {
@@ -31,14 +31,11 @@
                     break;
 
                 case 3:
-                    Console.WriteLine("What factor would you like to scale the recipe by? E.g 3");
-                    int scaleFactor = Convert.ToInt32(Console.ReadLine());
-
-                    mt.scaleRecipe(scaleFactor);
+                    mt.scaleRecipe();
                     break;
 
                 case 4:
-                    mt.resetScale(scaleFactor);
+                    mt.resetScale();
                     break;
 
             }
