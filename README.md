@@ -6,7 +6,7 @@ This Part of the entire poe challenged us to make use of multiple arrays in orde
 - Visual Studio 2019 or later
 - .NET Core 6.0
 
-## Installation
+## Installation and how to Run program
 
 1. Clone the repository to your local machine.
 2. Open the solution file in Visual Studio.
