@@ -11,3 +11,6 @@ This Part of the entire poe challenged us to make use of multiple arrays in orde
 1. Clone the repository to your local machine.
 2. Open the solution file in Visual Studio.
 3. Build and run the project.
+
+## Link to repository 
+https://github.com/ST10255814/PROG6221_POEPart1.git
