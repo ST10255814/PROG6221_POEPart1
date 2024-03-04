@@ -8,7 +8,7 @@ namespace poePart1
 {
     internal class Methods
     {
-        private int scaleFactor; //Global variable used for later calculations 
+        private int orignalScaleFactor = 1; //Global variable used for later calculations 
         /*
          * Allows the user to specify the amount of ingrediants and allows for each input and qauntity to be recorded and saved 
          * into multiple array lists to be displayed and perform calculations on later 
@@ -100,13 +100,16 @@ namespace poePart1
         public void scaleRecipe(List<int> allQuantities) 
         {
             Console.WriteLine("What factor would you like to scale the recipe by? E.g 3");
-            scaleFactor = Convert.ToInt32(Console.ReadLine());
+            int scaleFactor = Convert.ToInt32(Console.ReadLine());
 
             for (int i = 0; i < allQuantities.Count; i++)
             {
                 int value = allQuantities[i] * scaleFactor;
 
                 allQuantities[i] = value;
+                
+                //Allows for multiple scales to be reset later on in the resetScale Function
+                orignalScaleFactor = orignalScaleFactor * scaleFactor;
             }
         }
         /*
@@ -117,7 +120,7 @@ namespace poePart1
         {
             for (int i = 0; i < allQuantities.Count; i++)
             {
-                int value = allQuantities[i] / scaleFactor;
+                int value = allQuantities[i] / orignalScaleFactor;
 
                 allQuantities[i] = value;
             }
