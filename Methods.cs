@@ -26,17 +26,17 @@ namespace poePart1
                 Console.WriteLine("Enter ingrediant name: ");
                 ingrediantName = Console.ReadLine();
 
-                allIngrediantNames.Add(ingrediantName);
+                allIngrediantNames.Add(ingrediantName); //Adds ingrediant name into the list
 
                 Console.WriteLine("How much of the ingrediant is needed? ");
                 amount = Convert.ToInt32(Console.ReadLine());
 
-                allQuantities.Add(amount);
+                allQuantities.Add(amount); //Adds quantity of ingrediant to the list
 
                 Console.WriteLine("What is the unit of measurement?");
                 unitOfMeasure = Console.ReadLine();
 
-                allUnitsOfMeasures.Add(unitOfMeasure);
+                allUnitsOfMeasures.Add(unitOfMeasure); //Adds the unit of measure for the quantity into the list
 
             }
         }
@@ -68,7 +68,7 @@ namespace poePart1
                 Console.WriteLine("What is the description of step " + (i + 1));
                 stepDescription = Console.ReadLine();
 
-                allSteps.Add(stepDescription);
+                allSteps.Add(stepDescription); //Adds the step after each iteration into the list allSteps
             }
         }
         /*
@@ -104,7 +104,7 @@ namespace poePart1
 
             for (int i = 0; i < allQuantities.Count; i++)
             {
-                int value = allQuantities[i] * scaleFactor;
+                int value = allQuantities[i] * scaleFactor; //Multiples the index position i in the list by the scaleFactor
 
                 allQuantities[i] = value;
                 
@@ -120,7 +120,7 @@ namespace poePart1
         {
             for (int i = 0; i < allQuantities.Count; i++)
             {
-                int value = allQuantities[i] / orignalScaleFactor;
+                int value = allQuantities[i] / orignalScaleFactor; //Resets all the qauntities in the list back to its original value
 
                 allQuantities[i] = value;
             }
