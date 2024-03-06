@@ -17,7 +17,7 @@
             Console.WriteLine("Welcome! Please select one of the following options to create your recipe: " +
                 "\n0: Add Ingrediants\n1: Add steps\n2: Display recipe\n3: Scale recipe\n4: Reset Scale\n5: Clear recipe\n6: Exit");
 
-            choice = Convert.ToInt32(Console.ReadLine());
+            choice = Convert.ToInt32(Console.ReadLine()); 
 
             while(choice != 6 ) //performs switch case until the value 6 is entered to stop the program
             {
