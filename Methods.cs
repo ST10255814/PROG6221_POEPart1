@@ -15,6 +15,7 @@ namespace poePart1
          */
         public void addIngrediants(List<string> allIngrediantNames, List<int> allQuantities, List<string> allUnitsOfMeasures)
         {
+            //Declarations
             string ingrediantName, unitOfMeasure, temp;
             int amount;
 
@@ -46,6 +47,7 @@ namespace poePart1
         public void clearRecipe(List<string> allIngrediantNames, List<string> allSteps, List<int> allQuantities,
             List<string> allUnitsOfMeasures)
         {
+            //Uses the clear function to clear all lists
             allIngrediantNames.Clear();
             allSteps.Clear();
             allQuantities.Clear();
@@ -82,11 +84,13 @@ namespace poePart1
             Console.WriteLine("Ingrediants:");
             for (int i = 0; i < allIngrediantNames.Count; i++)
             {
+                //Prints out all the ingrediants with their quantities and unit of measurements 
                 Console.WriteLine(allIngrediantNames[i] + " " + allQuantities[i] + "" + allUnitOfMeasures[i]);
             }
             Console.WriteLine("\nSteps:\n");
             for (int i = 0; i < allSteps.Count; i++)
             {
+                //Prints out all steps in order
                 Console.WriteLine("Step " + (i + 1) + ": " + allSteps[i]);
             }
             Console.WriteLine("\n");
