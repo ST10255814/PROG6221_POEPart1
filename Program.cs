@@ -16,6 +16,7 @@
 
             Console.WriteLine("Welcome! Please select one of the following options to create your recipe: " +
                 "\n0: Add Ingrediants\n1: Add steps\n2: Display recipe\n3: Scale recipe\n4: Reset Scale\n5: Clear recipe\n6: Exit");
+            Console.WriteLine("Enter choice: ");
 
             choice = Convert.ToInt32(Console.ReadLine()); 
 
@@ -65,6 +66,7 @@
                 }
                 Console.WriteLine("Welcome! Please select one of the following options to create your recipe: " +
                 "\n0: Add Ingrediants\n1: Add steps\n2: Display recipe\n3: Scale recipe\n4: Reset Scale\n5: Clear recipe\n6: Exit");
+                Console.WriteLine("Enter choice: ");
                 choice = Convert.ToInt32(Console.ReadLine());
             }
         }
