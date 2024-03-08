@@ -54,6 +54,7 @@ namespace poePart1
             allUnitsOfMeasures.Clear();
 
             Console.WriteLine("Recipe cleared");
+            orignalScaleFactor = 1; //Resets scale factor back to one for the next recipe to be scaled
         }
         /*
          * This function allows the user to add as many steps as they want/needed
@@ -90,7 +91,7 @@ namespace poePart1
             Console.WriteLine("\nSteps:\n");
             for (int i = 0; i < allSteps.Count; i++)
             {
-                //Prints out all steps in order
+                //Prints out all steps in order 
                 Console.WriteLine("Step " + (i + 1) + ": " + allSteps[i]);
             }
             Console.WriteLine("\n");
