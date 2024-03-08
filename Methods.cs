@@ -129,6 +129,7 @@ namespace poePart1
 
                 allQuantities[i] = value;
             }
+            orignalScaleFactor = 1;
         }
     }
 }
