@@ -16,7 +16,7 @@ namespace poePart1
         public void addIngrediants(List<string> allIngrediantNames, List<int> allQuantities, List<string> allUnitsOfMeasures)
         {
             //Declarations
-            string ingrediantName, unitOfMeasure, temp;
+            string ingrediantName, unitOfMeasure;
             int amount;
 
             Console.WriteLine("How many ingrediants does the recipe contain? ");
