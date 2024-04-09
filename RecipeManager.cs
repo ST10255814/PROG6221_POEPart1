@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace poePart1
 {
-    internal class Methods
+    internal class RecipeManager
     {
+        PrintUtil printUtil = new PrintUtil();
+        Ingrediant ingrediant = new Ingrediant();
+
         private int orignalScaleFactor = 1; //Global variable used for later calculations in the resetScale function
         /*
          * Allows the user to specify the amount of ingrediants and allows for each input and qauntity to be recorded and saved 
@@ -15,30 +18,25 @@ namespace poePart1
          */
         public void addIngrediants(List<string> allIngrediantNames, List<int> allQuantities, List<string> allUnitsOfMeasures)
         {
-            //Declarations
-            string ingrediantName, unitOfMeasure;
-            int amount;
-
-            Console.WriteLine("How many ingrediants does the recipe contain? ");
+            printUtil.DisplayAmountOfIngrediantsMessage();
             int quantity = Convert.ToInt32(Console.ReadLine());
 
             for (int i = 0; i < quantity; i++) //for loop for the amount of ingrediants required 
             {
-                Console.WriteLine("Enter ingrediant name: ");
-                ingrediantName = Console.ReadLine();
+                printUtil.DisplayIgrediantNameMessage();
+                ingrediant.setIngrediantName(Console.ReadLine());
 
-                allIngrediantNames.Add(ingrediantName); //Adds ingrediant name into the list
+                allIngrediantNames.Add(ingrediant.getIngrediantName()); //Adds ingrediant name into the list
 
-                Console.WriteLine("How much of the ingrediant is needed? ");
-                amount = Convert.ToInt32(Console.ReadLine());
+                printUtil.DisplayQuantityOfIngrediantMessage();
+                ingrediant.setAmount(Convert.ToInt32(Console.ReadLine()));
 
-                allQuantities.Add(amount); //Adds quantity of ingrediant to the list
+                allQuantities.Add(ingrediant.getAmount()); //Adds quantity of ingrediant to the list
 
-                Console.WriteLine("What is the unit of measurement?");
-                unitOfMeasure = Console.ReadLine();
+                printUtil.DisplayUnitOfMeasurementMessage();
+                ingrediant.setUnitOfMeasure(Console.ReadLine());
 
-                allUnitsOfMeasures.Add(unitOfMeasure); //Adds the unit of measure for the quantity into the list
-
+                allUnitsOfMeasures.Add(ingrediant.getUnitOfMeasure()); //Adds the unit of measure for the quantity into the list
             }
         }
         /*
@@ -53,7 +51,7 @@ namespace poePart1
             allQuantities.Clear();
             allUnitsOfMeasures.Clear();
 
-            Console.WriteLine("Recipe cleared");
+            printUtil.DisplayClearRecipeMessage();
             orignalScaleFactor = 1; //Resets scale factor back to one for the next recipe to be scaled
         }
         /*
@@ -63,12 +61,12 @@ namespace poePart1
         {
             String stepDescription;
 
-            Console.WriteLine("How many steps are there? ");
+            printUtil.DisplayAmountOfStepsMessage();
             int noOfSteps = Convert.ToInt32(Console.ReadLine());
 
             for (int i = 0; i < noOfSteps; i++)//Iterates over the amount of steps required and allows user input for each step
             {
-                Console.WriteLine("What is the description of step " + (i + 1));
+                printUtil.DisplayStepDescriptionMessage(i);
                 stepDescription = Console.ReadLine();
 
                 allSteps.Add(stepDescription); //Adds the step after each iteration into the list allSteps
@@ -78,23 +76,9 @@ namespace poePart1
          * This functions displays the recipe with all array elements with the use of a for loop 
          */
         public void displayRecipe(List<string> allIngrediantNames, List<string> allSteps, List<int> allQuantities,
-            List<string> allUnitOfMeasures)
+			List<string> allUnitOfMeasures)
         {
-            Console.WriteLine("Recipe:\n");
-
-            Console.WriteLine("Ingrediants:");
-            for (int i = 0; i < allIngrediantNames.Count; i++)
-            {
-                //Prints out all the ingrediants with their quantities and unit of measurements 
-                Console.WriteLine(allIngrediantNames[i] + " " + allQuantities[i] + "" + allUnitOfMeasures[i]);
-            }
-            Console.WriteLine("\nSteps:\n");
-            for (int i = 0; i < allSteps.Count; i++)
-            {
-                //Prints out all steps in order 
-                Console.WriteLine("Step " + (i + 1) + ": " + allSteps[i]);
-            }
-            Console.WriteLine("\n");
+            printUtil.DisplayRecipe(allIngrediantNames, allSteps, allQuantities, allUnitOfMeasures);
         }
 
         /*
@@ -104,7 +88,7 @@ namespace poePart1
 
         public void scaleRecipe(List<int> allQuantities)
         {
-            Console.WriteLine("What factor would you like to scale the recipe by? E.g 3");
+            printUtil.DisplayScaleRecipeMessage();
             int scaleFactor = Convert.ToInt32(Console.ReadLine());
 
             //Allows for multiple scales to be reset later on in the resetScale Function
