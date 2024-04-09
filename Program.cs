@@ -36,9 +36,9 @@
                         break;
 
                     case 2:
-                        //Calls method to display the entire recipe with its parameters 
-                        recipeManager.displayRecipe(allIngrediantNames, allSteps, allQuantities, allUnitsOfMeasure);
-                        break;
+						//Calls method to display the entire recipe with its parameters 
+						printUtil.DisplayRecipe(allIngrediantNames, allSteps, allQuantities, allUnitsOfMeasure);
+						break;
 
                     case 3:
                         //Calls method to scale the quantities of the recipe with its parameters 

@@ -72,14 +72,6 @@ namespace poePart1
                 allSteps.Add(stepDescription); //Adds the step after each iteration into the list allSteps
             }
         }
-        /*
-         * This functions displays the recipe with all array elements with the use of a for loop 
-         */
-        public void displayRecipe(List<string> allIngrediantNames, List<string> allSteps, List<int> allQuantities,
-			List<string> allUnitOfMeasures)
-        {
-            printUtil.DisplayRecipe(allIngrediantNames, allSteps, allQuantities, allUnitOfMeasures);
-        }
 
         /*
          * This function scales the recipe to the number of people (scaleFactor) required and replaces the new value in the index

@@ -33,7 +33,7 @@ namespace poePart1
 			Console.WriteLine(RecipeConstants.NUMBER_OF_STEPS_MESSAGE);
 		}
 		public void DisplayRecipe(List<string> allIngrediantNames, List<string> allSteps, List<int> allQuantities,
-			List<string> allUnitOfMeasures)
+			List<string> allUnitsOfMeasures)
 		{
 			Console.WriteLine("Recipe:\n");
 
@@ -41,7 +41,7 @@ namespace poePart1
 			for (int i = 0; i < allIngrediantNames.Count; i++)
 			{
 				//Prints out all the ingrediants with their quantities and unit of measurements 
-				Console.WriteLine(allIngrediantNames[i] + " " + allQuantities[i] + "" + allUnitOfMeasures[i]);
+				Console.WriteLine(allIngrediantNames[i] + " " + allQuantities[i] + "" + allUnitsOfMeasures[i]);
 			}
 			Console.WriteLine("\nSteps:\n");
 			for (int i = 0; i < allSteps.Count; i++)
