@@ -13,8 +13,6 @@ namespace poePart1
 
 		public const string CHOICE_MESSAGE = "Enter choice: ";
 
-		public const string THANK_YOU_MESSAGE = "Thank you for using this application!";
-
 		public const string INVALID_OPTION_MESSAGE = "Please select a valid option.";
 
 		public const string CLEAR_RECIPE_MESSAGE = "Recipe cleared";

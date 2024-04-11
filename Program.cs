@@ -13,8 +13,9 @@
             int choice;
 
 			//Object used to call methods from class methods
-			RecipeManager recipeManager = new RecipeManager();  
+			RecipeManager recipeManager = new RecipeManager(); 
             PrintUtil printUtil = new PrintUtil();
+            
 
             printUtil.DisplayWelcomeMessage(); 
             printUtil.DisplayChoiceMessage();
@@ -57,7 +58,6 @@
 
                     case 6:
                         //Exit statement 
-                        printUtil.DisplayThankYouMessage();  
                         break;
 
                     default:

@@ -16,10 +16,6 @@ namespace poePart1
 		{
 			Console.WriteLine(RecipeConstants.CHOICE_MESSAGE);
 		}
-		public void DisplayThankYouMessage()
-		{
-			Console.WriteLine(RecipeConstants.THANK_YOU_MESSAGE);
-		}
 		public void DisplayInvalidOptionMessage()
 		{
 			Console.WriteLine(RecipeConstants.INVALID_OPTION_MESSAGE);
@@ -32,6 +28,7 @@ namespace poePart1
 		{
 			Console.WriteLine(RecipeConstants.NUMBER_OF_STEPS_MESSAGE);
 		}
+		//Displays the entire recipe with all array contents 
 		public void DisplayRecipe(List<string> allIngrediantNames, List<string> allSteps, List<int> allQuantities,
 			List<string> allUnitsOfMeasures)
 		{
@@ -74,6 +71,10 @@ namespace poePart1
 		public void DisplayUnitOfMeasurementMessage()
 		{
 			Console.WriteLine(RecipeConstants.UNIT_OF_MEASUREMENT_MESSAGE);
+		}
+		public string ReadLine()
+		{
+			return Console.ReadLine(); 
 		}
 	}
 }

@@ -8,8 +8,8 @@ namespace poePart1
 {
     internal class RecipeManager
     {
-        PrintUtil printUtil = new PrintUtil();
         Ingrediant ingrediant = new Ingrediant();
+        PrintUtil printUtil = new PrintUtil();
 
         private int orignalScaleFactor = 1; //Global variable used for later calculations in the resetScale function
         /*
@@ -24,17 +24,17 @@ namespace poePart1
             for (int i = 0; i < quantity; i++) //for loop for the amount of ingrediants required 
             {
                 printUtil.DisplayIgrediantNameMessage();
-                ingrediant.setIngrediantName(Console.ReadLine());
+                ingrediant.setIngrediantName(printUtil.ReadLine());
 
                 allIngrediantNames.Add(ingrediant.getIngrediantName()); //Adds ingrediant name into the list
 
                 printUtil.DisplayQuantityOfIngrediantMessage();
-                ingrediant.setAmount(Convert.ToInt32(Console.ReadLine()));
+                ingrediant.setAmount(Convert.ToInt32(printUtil.ReadLine()));
 
                 allQuantities.Add(ingrediant.getAmount()); //Adds quantity of ingrediant to the list
 
                 printUtil.DisplayUnitOfMeasurementMessage();
-                ingrediant.setUnitOfMeasure(Console.ReadLine());
+                ingrediant.setUnitOfMeasure(printUtil.ReadLine());
 
                 allUnitsOfMeasures.Add(ingrediant.getUnitOfMeasure()); //Adds the unit of measure for the quantity into the list
             }
@@ -62,12 +62,12 @@ namespace poePart1
             String stepDescription;
 
             printUtil.DisplayAmountOfStepsMessage();
-            int noOfSteps = Convert.ToInt32(Console.ReadLine());
+            int noOfSteps = Convert.ToInt32(printUtil.ReadLine());
 
             for (int i = 0; i < noOfSteps; i++)//Iterates over the amount of steps required and allows user input for each step
             {
                 printUtil.DisplayStepDescriptionMessage(i);
-                stepDescription = Console.ReadLine();
+                stepDescription = printUtil.ReadLine();
 
                 allSteps.Add(stepDescription); //Adds the step after each iteration into the list allSteps
             }
@@ -81,7 +81,7 @@ namespace poePart1
         public void scaleRecipe(List<int> allQuantities)
         {
             printUtil.DisplayScaleRecipeMessage();
-            int scaleFactor = Convert.ToInt32(Console.ReadLine());
+            int scaleFactor = Convert.ToInt32(printUtil.ReadLine());
 
             //Allows for multiple scales to be reset later on in the resetScale Function
             orignalScaleFactor = orignalScaleFactor * scaleFactor;
